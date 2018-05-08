@@ -1,0 +1,263 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src="js/jquery-1.11.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<style>
+		*{
+			margin: 0px;
+			height: 0px;
+		}
+		.wrap{
+			width: 100%;
+			position: relative;
+			height: auto;
+			background: #eee;
+			overflow: hidden;
+		}
+		.info{
+			width: 80%;
+			margin: 100px auto;
+			height: auto;
+
+		}
+		.info p{
+			font-size: 50px;
+			height: auto;
+			margin-bottom: 30px;
+		}
+		.info p:nth-child(1){
+			margin-bottom: 100px;
+		}
+		.type{
+			width: 80%;
+			margin: 100px auto;
+			height: 300px;
+		}
+		input{
+			height: 25px;
+			margin-left: 10px;
+			padding-left: 5px;
+		}
+	</style>
+</head>
+<body>
+<main></main>	
+
+	<div class="wrap">
+		<div class="info">
+			<p>🔺BR北京賽車投資計畫🔺</p>
+			<p>
+			   期數: 第 【 {{info01}} 】 期<br/>
+			   關數: 第 《 1 》 關<br/>
+			   ⬇第一名投注⬇
+			</p>
+			<p>《  2  5  7  8  10 》號車</p>
+			<p>目前:  6 勝 0 敗</p>
+			<p>▲▲ 時間快到囉 各位參酌下注<br/>僅供參考請理性投資</p>
+		</div>
+		<div class="type">
+			期數:<input v-model="info01" placeholder="輸入期號">
+			<br/><br/>
+			關數:<input v-model="message" placeholder="輸入關數">
+			<br/><br/>
+			名次:<input v-model="message" placeholder="輸入名次">
+			<br/><br/>
+			車號:<input v-model="message" placeholder="輸入下注車號">
+			<br/><br/>
+			勝敗:<input v-model="message" placeholder="">勝<input v-model="message" placeholder="">敗
+
+		</div>
+		
+	</div>
+</main>
+</body>
+
+
+<script>
+	
+
+	var main = new Vue({
+		el: 'main',
+		data: {
+			titleMessage: 'VUE 實作項目',
+			name: '您的姓名',
+			testList: [
+				{ no: '1' , text: 'javascript' },
+				{ no: '2' , text: 'html' },
+				{ no: '3' , text: 'sass' },
+				{ no: '4' , text: 'jquery' },
+				{ no: '5' , text: 'node.js' },
+			],
+			groceryList: [
+				{ id: '0' , name: '小黃' , text: '蔬菜'},
+				{ id: '1' , name: '小黃' , text: '奶酪'},
+				{ id: '2' , name: '小黃' , text: '還有其他人吃的東西'},
+			],
+			isactive: true,
+			see: false,
+			inputStyle:{
+				'margin-top': '50px',
+				width: '100%',
+			},
+			message: ''
+		},
+		methods: {
+			infoClick: function(){
+				console.log('點擊觸發')
+				main.titleMessage = 'VUE test list !!'
+				main.testList.push({ no: '6' , text: 'gulp' },)
+				$('.title').css('background-color', '#ccc');
+			}
+
+		}
+	})
+
+
+</script>
+</html>
+ -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<style>
+		*{
+			margin: 0px;
+			height: 0px;
+		}
+		.wrap{
+			width: 100%;
+			position: relative;
+			height: auto;
+			/* background: #eee; */
+			overflow: hidden;
+		}
+		.info{
+			width: 80%;
+			margin: 50px auto;
+			height: auto;
+
+		}
+		.info p{
+			font-size: 40px;
+			height: auto;
+			margin-bottom: 30px;
+		}
+		.info p:nth-child(1){
+			margin-bottom: 80px;
+		}
+		.type{
+			width: 80%;
+			margin: 100px auto;
+			height: 300px;
+			font-size: 20px;
+			border-top: 1px solid #ccc;
+			padding-top: 50px;
+		}
+		input{
+			height: 30px;
+			margin-left: 10px;
+			margin-right: 10px;
+			padding-left: 5px;
+		}
+	</style>
+</head>
+<body>
+<main>
+
+
+
+
+	<div class="wrap">
+		<div class="info">
+			<p>🔺BR北京賽車投資計畫🔺</p>
+			<p>
+			   期數: 第 【 {{info01}} 】 期<br/>
+			   關數: 第 《 {{info02}} 》 關<br/>
+			   ⬇第  {{info03}}  名投注⬇
+			</p>
+			<p>《 {{info04}} 》號車</p>
+			<p>目前:  {{info05}} 勝 {{info06}} 敗</p>
+			<p>▲▲ 時間快到囉 各位參酌下注<br/>僅供參考請理性投資</p>
+		</div>
+		<div class="type">
+			期數:<input v-model="info01" placeholder="輸入期號">
+			<br/><br/>
+			關數:<input v-model="info02" placeholder="輸入關數">
+			<br/><br/>
+			名次:<input v-model="info03" placeholder="輸入名次">
+			<br/><br/>
+			車號:<input v-model="info04" placeholder="輸入下注車號">
+			<br/><br/>
+			勝敗:<input v-model="info05" placeholder="">勝<input v-model="info06" placeholder="">敗
+
+		</div>
+		
+	</div>
+
+
+
+</main>
+
+
+<script>
+
+
+
+
+
+	var main = new Vue({
+		el: 'main',
+		data: {
+			info01: '',
+			info02: '',
+			info03: '',
+			info04: '',
+			info05: '',
+			info06: '',
+		},
+
+	})
+
+
+
+
+
+
+</script>
+
+
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
